@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samita Gyawali | Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+
+/* BODY */
+body{
+  background:#0f172a;
+  color:#e5e7eb;
+  line-height:1.6;
+}
+
+/* NAVBAR */
+header{
+  background:#020617;
+  padding:18px 40px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+nav h1{color:#38bdf8;font-size:1.8rem}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{color:#38bdf8}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.profile-pic{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #38bdf8;
+  margin-bottom:20px;
+}
+
+.hero h2{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.hero span{color:#38bdf8}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 26px;
+  background:#38bdf8;
+  color:#020617;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+section h2{
+  margin-bottom:20px;
+  color:#38bdf8;
+}
+
+/* SKILLS */
+.skill{margin-bottom:15px}
+
+.skill-bar{
+  background:#1e293b;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.skill-fill{
+  background:#38bdf8;
+  padding:6px;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#020617;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid #1e293b;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:#020617;
+  margin-top:40px;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  nav ul{flex-direction:column;margin-top:10px}
+  .hero h2{font-size:2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <h1>Samita Gyawali</h1>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section class="hero">
+  <img src="profile.jpg" class="profile-pic" alt="Samita Gyawali">
+  <h2>Hello, I'm <span>Samita Gyawali</span></h2>
+  <p>Computer Engineering Student | AI & Web Developer</p>
+  <a href="cv.pdf" class="btn" download>Download CV</a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a passionate Computer Engineering student focused on AI, machine learning,
+    and full-stack web development. I enjoy building real-world projects like
+    AI-powered health apps and blockchain-based voting systems.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <p>Python</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Django</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>React</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Machine Learning</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+  </div>
+
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>AI Period & Fertility Tracker</h3>
+      <p>ML-based menstrual prediction and health insights system.</p>
+    </div>
+
+    <div class="card">
+      <h3>Blockchain Voting System</h3>
+      <p>Secure election platform using Ethereum and Django.</p>
+    </div>
+
+    <div class="card">
+      <h3>Transport Management System</h3>
+      <p>Web-based vehicle and route management platform.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: samitaa56@gmail.com</p>
+  <p>GitHub: github.com/yourusername</p>
+  <p>Location: Kirtipur, Nepal</p>
+</section>
+
+<footer>
+  <p>© 2026 Samita Gyawali. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

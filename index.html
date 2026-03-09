@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samita Gyawali | Portfolio</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; transition: all 0.3s; }
+body { line-height: 1.6; background:#f0f0f0; color:#111; padding-top:60px; transition: background 0.3s, color 0.3s; }
+a { text-decoration:none; color:inherit; }
+
+/* NAVBAR */
+header {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:15px;
+  padding:15px 40px;
+  background: rgba(200,200,200,0.3);
+  color:black;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(0px);
+  transition: background 0.3s, padding 0.3s, color 0.3s, backdrop-filter 0.3s;
+}
+header.scrolled { backdrop-filter: blur(8px); background: rgba(200,200,200,0.5); }
+.nav-left { margin-right:auto; font-weight:bold; font-size:1.6rem; }
+nav ul { list-style:none; display:flex; gap:25px; font-size:0.9rem; }
+nav ul li a:hover { opacity:0.8; }
+.nav-theme { margin-left:20px; font-weight:bold; cursor:pointer; display:flex; align-items:center; gap:5px; font-size:0.9rem; }
+
+/* MAIN CONTAINER */
+.main-container { max-width:900px; margin:auto; padding:20px; }
+
+/* HERO */
+.hero { text-align:center; padding:60px 20px 40px 20px; }
+.profile-pic { width:160px; height:160px; border-radius:50%; object-fit:cover; border:4px solid; margin-bottom:20px; }
+.btn { display:inline-block; margin-top:15px; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer; transition:all 0.3s; }
+
+/* PORTFOLIO */
+.box-container { display:flex; flex-direction:column; gap:20px; margin-top:20px; }
+.box { background: rgba(255,255,255,0.15); border-radius:25px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); }
+.inner-box { background: rgba(255,255,255,0.1); border-radius:15px; padding:15px; flex:1; }
+.flex-row { display:flex; gap:20px; flex-wrap:wrap; }
+@media(max-width:900px){ .flex-row{flex-direction:column;} }
+.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.collapsible { display:none; }
+
+/* CONTACT */
+#contact { font-size:0.9rem; display:flex; justify-content:space-between; align-items:center; margin-top:50px; }
+#contact div p { line-height:1.4; }
+#contact .title { font-weight:bold; margin-bottom:10px; }
+#contact a.linkedin { display:inline-block; transition:opacity 0.3s; }
+#contact a.linkedin:hover { opacity:0.8; }
+.linkedin-logo { width:20px; height:20px; vertical-align:middle; }
+
+/* FOOTER */
+footer { text-align:center; padding:30px; margin-top:40px; transition:all 0.3s; }
+
+/* DARK MODE */
+body.dark-mode { background:#0f172a; color:#e5e7eb; }
+body.dark-mode header { background: rgba(30,64,175,0.25); color:white; }
+body.dark-mode header.scrolled { background: rgba(30,64,175,0.35); }
+body.dark-mode .box { background: rgba(0,0,0,0.25); }
+body.dark-mode .inner-box { background: rgba(0,0,0,0.2); }
+body.dark-mode footer { background: rgba(0,0,0,0.3); color:#94a3b8; }
+body.dark-mode .profile-pic { border-color:#38bdf8; }
+body.dark-mode .btn { background:#38bdf8; color:#020617; }
+
+/* LIGHT MODE */
+body.light-mode header { color:black; }
+body.light-mode .box { background: rgba(255,255,255,0.15); }
+body.light-mode .inner-box { background: rgba(255,255,255,0.1); }
+body.light-mode footer { background: rgba(255,255,255,0.2); color:#555; }
+body.light-mode .profile-pic { border-color:#1e40af; }
+body.light-mode .btn { background:#1e40af; color:#f5f5f5; }
+</style>
+</head>
+<body class="light-mode">
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="nav-left">Samita Gyawali</div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>                                                                   
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="toggleTheme" class="nav-theme"><span id="themeIcon">🌙</span> <span id="themeText">Night</span></div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="main-container">
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <img src="profile.jpg" class="profile-pic" alt="Samita Gyawali">
+    <h2>Hello, I'm Samita Gyawali</h2>
+    <p>Computer Engineering Student | AI/ML & Web Development Enthusiast</p>
+    <a href="cv.pdf" class="btn" download>Download CV</a>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="box-container">
+
+      <!-- Projects Box -->
+      <div class="box">
+        <h3>Projects</h3>
+        <p style="text-align:center; margin-bottom:20px;">
+          Here are some of my recent projects. I'm always working on something new, so check back often!
+        </p>
+        <div style="text-align:center;">
+          <button id="toggleProjects" class="btn">View Projects</button>
+        </div>
+        <div id="projectsContent" class="collapsible" style="margin-top:15px;">
+          <div class="projects">
+            <div class="inner-box">
+              <h4>Voting and Election Management System</h4>
+              <ul>
+                <li>Blockchain-based voting platform with secure voter authentication</li>
+                <li>Integrated AI features (OCR, CNN for ID verification)</li>
+                <li>Tools: React.js, Django, Ethereum, Smart Contract</li>
+              </ul>
+            </div>
+            <div class="inner-box">
+              <h4>Menstrual Irregularity Detection System (AI/ML)</h4>
+              <ul>
+                <li>Web-based platform for menstrual irregularity detection, cycle prediction, fertility analysis with chatbot assistance</li>
+                <li>Implemented ML models for cycle pattern recognition and health insights</li>
+                <li>Tools: Django, Javascript, Python ML models</li>
+              </ul>
+            </div>
+            <div class="inner-box">
+              <h4>Ping-Pong Game (Graphics Project)</h4>
+              <ul>
+                <li>Basic 2D ping-pong game using Python graphics</li>
+                <li>Implemented scoring, ball movement, and collision logic</li>
+                <li>Tools: Python, Pygame</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills + Training Box -->
+      <div class="box" style="margin-top:10px;">
+        <div class="flex-row">
+          <div class="inner-box">
+            <h3>Skills</h3>
+            <p>Python, C, C++, Javascript, React.js, Django, Flutter, AI/ML (CNN, OCR, NLP, Tensorflow)</p>
+          </div>
+          <div class="inner-box">
+            <h3>Training</h3>
+            <ul>
+              <li>Artificial Intelligence / Machine Learning</li>
+              <li>Flutter Development</li>
+              <li>Microcontroller and Robotics</li>
+              <li>HTML, CSS, and Javascript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SPACE BEFORE CONTACT -->
+  <div style="height:100px;"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div>
+      <p class="title">Contact Me</p>
+      <p>samitaa56@gmail.com</p>
+      <p>Kirtipur, Kathmandu, Nepal</p>
+    </div>
+    <div>
+      <!-- LinkedIn logo image -->
+      <a class="linkedin" href="https://www.linkedin.com/in/samita-gyawali-b735aa25b" target="_blank">
+        <img src="linkedin.png" alt="LinkedIn" class="linkedin-logo" style="width:20px; height:20px;">
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Samita Gyawali. All rights reserved.</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Day/Night toggle
+const toggleThemeDiv = document.getElementById('toggleTheme');
+const themeIcon = document.getElementById('themeIcon');
+const themeText = document.getElementById('themeText');
+toggleThemeDiv.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('light-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  themeIcon.textContent = isDark ? '☀️' : '🌙';
+  themeText.textContent = isDark ? 'Day' : 'Night';
+});
+
+// Projects collapsible
+const toggleProjectsBtn = document.getElementById('toggleProjects');
+const projectsContent = document.getElementById('projectsContent');
+toggleProjectsBtn.addEventListener('click', () => {
+  projectsContent.style.display = projectsContent.style.display === 'block' ? 'none' : 'block';
+  toggleProjectsBtn.textContent = projectsContent.style.display === 'block' ? 'Hide Projects' : 'View Projects';
+});
+
+// Navbar scroll effect with blur
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY>20){
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
+
+</body>
+</html>
